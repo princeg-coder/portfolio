@@ -1,5 +1,5 @@
 
-import { Play, Globe, ExternalLink, ShieldCheck, Cpu, Server, Database, Cloud, Terminal } from 'lucide-react';
+import { Play, Globe, ExternalLink, ShieldCheck } from 'lucide-react';
 import { PlaceHolderImages } from './placeholder-images';
 
 export interface Project {
