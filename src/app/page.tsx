@@ -80,18 +80,18 @@ Certification: Preparing for AWS SAA-C03.
 
   const projects = [
     { 
-      title: 'QIKLET Marketplace', 
-      tech: 'Node.js, PostgreSQL, Express, Socket.IO', 
-      desc: 'Hyperlocal marketplace ecosystem with order management, real-time vendor dashboards, and complex delivery workflows.',
+      title: 'QIKLET – Hyperlocal Marketplace', 
+      tech: 'Node.js, PostgreSQL, Multer, AWS S3, EC2 Linux', 
+      desc: 'Architected the entire backend ecosystem. Built scalable REST APIs for both Android and iOS apps. Implemented Multer for image uploads to AWS S3 and managed full AWS infrastructure deployment on Linux instances.',
       link: 'https://play.google.com/store/apps/details?id=com.dreamfiller.qiklet',
-      type: 'Android App',
+      type: 'Android & iOS App',
       icon: <Play className="h-4 w-4" />,
       img: PlaceHolderImages.find(i => i.id === 'qiklet-thumbnail')?.imageUrl 
     },
     { 
       title: 'Broan & NuTone IoT', 
       tech: 'AWS IoT Core, MQTT, Node.js, PostgreSQL', 
-      desc: 'IoT device platform for onboarding, telemetry processing, and remote device control.',
+      desc: 'IoT device platform for onboarding, telemetry processing, and remote device control. Engineered real-time communication protocols for smart home hardware.',
       link: 'https://play.google.com/store/apps/details?id=com.ciaqbroan.overture.mobile&hl=en_IN',
       type: 'Android App',
       icon: <Play className="h-4 w-4" />,
@@ -127,7 +127,7 @@ Certification: Preparing for AWS SAA-C03.
     { 
       title: 'AWS Cost Optimization', 
       tech: 'Cloud Engineering, Linux Migration', 
-      desc: 'Migrated EC2 workloads from Windows to Linux, reducing cloud costs by over 60% while improving reliability.',
+      desc: 'Migrated production EC2 workloads from Windows to Linux infrastructure. Optimized VPC and security group configurations, reducing operational costs by over 60%.',
       link: '#',
       type: 'Case Study',
       icon: <ShieldCheck className="h-4 w-4" />,
