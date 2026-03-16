@@ -7,7 +7,7 @@ import {
   Download, Send, ChevronRight, Terminal, Database, 
   Server, Phone, MapPin, Award, BookOpen, Cpu, Code,
   GraduationCap, CheckCircle2, Globe, Layers, ShieldCheck,
-  Settings, TestTube2, Workflow, Cloud
+  Settings, TestTube2, Workflow, Cloud, ExternalLink, Play
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -66,7 +66,7 @@ Developer: Prince Gupta
 Role: Senior Backend Developer (Node.js)
 Experience: 4.5+ years
 Core Skills: Node.js, Express.js, AWS (EC2, RDS, S3, Lambda, API Gateway), PostgreSQL, MongoDB, Microservices, Socket.IO, MQTT.
-Key Projects: QIKLET (Hyperlocal Marketplace), Broan & NuTone (IoT), Age Industries (IoT).
+Key Projects: QIKLET (Hyperlocal Marketplace), Broan & NuTone (IoT), Age Industries (IoT), School Management, Exam Portal, Core Desk.
 Education: B.E. in CS (2018).
 Certification: Preparing for AWS SAA-C03.
     `.trim();
@@ -77,6 +77,63 @@ Certification: Preparing for AWS SAA-C03.
       description: "Professional background ready for your AI assistant.",
     });
   };
+
+  const projects = [
+    { 
+      title: 'QIKLET Marketplace', 
+      tech: 'Node.js, PostgreSQL, Express, Socket.IO', 
+      desc: 'Hyperlocal marketplace ecosystem with order management, real-time vendor dashboards, and complex delivery workflows.',
+      link: 'https://play.google.com/store/apps/details?id=com.dreamfiller.qiklet',
+      type: 'Android App',
+      icon: <Play className="h-4 w-4" />,
+      img: PlaceHolderImages.find(i => i.id === 'qiklet-thumbnail')?.imageUrl 
+    },
+    { 
+      title: 'Broan & NuTone IoT', 
+      tech: 'AWS IoT Core, MQTT, Node.js, PostgreSQL', 
+      desc: 'IoT device platform for onboarding, telemetry processing, and remote device control.',
+      link: 'https://play.google.com/store/apps/details?id=com.ciaqbroan.overture.mobile&hl=en_IN',
+      type: 'Android App',
+      icon: <Play className="h-4 w-4" />,
+      img: PlaceHolderImages.find(i => i.id === 'iot-platform-thumbnail')?.imageUrl 
+    },
+    { 
+      title: 'School Management System', 
+      tech: 'Node.js, React, PostgreSQL', 
+      desc: 'Comprehensive ERP for schools covering admissions, attendance, fees, and administrative workflows.',
+      link: 'https://schoolmanagement.dream-filler.com/',
+      type: 'Web Application',
+      icon: <Globe className="h-4 w-4" />,
+      img: 'https://picsum.photos/seed/school-er/800/600'
+    },
+    { 
+      title: 'Exam Portal', 
+      tech: 'Node.js, PostgreSQL, REST APIs', 
+      desc: 'Secure digital assessment platform for conducting online examinations with real-time proctoring features.',
+      link: 'https://examportal.dream-filler.com/',
+      type: 'Web Application',
+      icon: <Globe className="h-4 w-4" />,
+      img: 'https://picsum.photos/seed/exam-portal/800/600'
+    },
+    { 
+      title: 'Core Desk', 
+      tech: 'Next.js, Node.js, Tailwind', 
+      desc: 'Modern collaborative workspace and task management tool for agile development teams.',
+      link: 'https://coredesk.vercel.app/',
+      type: 'Web Application',
+      icon: <ExternalLink className="h-4 w-4" />,
+      img: 'https://picsum.photos/seed/core-desk/800/600'
+    },
+    { 
+      title: 'AWS Cost Optimization', 
+      tech: 'Cloud Engineering, Linux Migration', 
+      desc: 'Migrated EC2 workloads from Windows to Linux, reducing cloud costs by over 60% while improving reliability.',
+      link: '#',
+      type: 'Case Study',
+      icon: <ShieldCheck className="h-4 w-4" />,
+      img: PlaceHolderImages.find(i => i.id === 'aws-opt-thumbnail')?.imageUrl 
+    },
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 selection:bg-primary/30">
@@ -182,10 +239,10 @@ Certification: Preparing for AWS SAA-C03.
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
                   <p className="text-zinc-400 leading-relaxed text-sm">
-                    Results-driven Backend Developer (Node.js) with 4.5+ years of experience designing and building scalable REST APIs, working with SQL/NoSQL databases, deploying cloud workloads on AWS, and delivering real-time production-grade applications. Strong understanding of software architecture, microservices, and system design.
+                    Results-driven Backend Developer (Node.js) with 4.5+ years of experience designing and building scalable REST APIs, working with SQL/NoSQL databases, deploying cloud workloads on AWS, and delivering real-time production-grade applications.
                   </p>
                   <p className="text-zinc-400 leading-relaxed text-sm mt-4">
-                    Experienced in AWS infrastructure, database optimization, authentication systems, and automated testing, with hands-on expertise in developing backend solutions for hyperlocal commerce, IoT platforms, and enterprise systems. Currently preparing for AWS Certified Solutions Architect – Associate (SAA-C03).
+                    Experienced in AWS infrastructure, database optimization, authentication systems, and automated testing, with hands-on expertise in developing backend solutions for hyperlocal commerce, IoT platforms, and enterprise systems.
                   </p>
                 </div>
 
@@ -204,16 +261,6 @@ Certification: Preparing for AWS SAA-C03.
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="relative p-6 rounded-2xl bg-primary/5 border border-primary/10 overflow-hidden">
-                   <div className="absolute top-0 right-0 p-4 opacity-5">
-                      <Cpu className="h-16 w-16" />
-                   </div>
-                   <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3">Philosophy</h3>
-                   <blockquote className="text-sm font-medium italic text-zinc-300">
-                     "I specialize in building the invisible engines that power high-impact applications. Currently focused on cloud scalability and resilient system design."
-                   </blockquote>
                 </div>
               </TabsContent>
 
@@ -236,12 +283,9 @@ Certification: Preparing for AWS SAA-C03.
                         'Designed and developed scalable REST APIs using Node.js, Express.js, and PostgreSQL for production applications.',
                         'Built backend modules for hyperlocal commerce platforms, POS systems, and real-time applications.',
                         'Implemented secure role-based authentication using OAuth2, JWT, and access/refresh token strategies.',
-                        'Integrated Firebase for push notifications and AWS S3 for file and image storage.',
-                        'Developed real-time notification systems using WebSockets and Socket.IO.',
-                        'Designed and optimized database schemas and queries for PostgreSQL, MongoDB, and MySQL.',
                         'Managed cloud deployments on AWS infrastructure including EC2, RDS, S3, Lambda, and API Gateway.',
-                        'Wrote unit and integration tests using Mocha and Jest to ensure application stability.',
-                        'Mentored junior developers and collaborated with QA and UI teams during Agile sprint cycles.'
+                        'Integrated real-time notification systems using WebSockets, Socket.IO, and MQTT.',
+                        'Designed and optimized database schemas for PostgreSQL, MongoDB, and MySQL.'
                       ].map((bullet, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <ChevronRight className="h-3 w-3 text-primary mt-0.5 shrink-0" />
@@ -252,7 +296,7 @@ Certification: Preparing for AWS SAA-C03.
                   </div>
                 </div>
 
-                {/* Coding Skills Visual Section */}
+                {/* Coding Skills Visual */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-10">
                     <Code className="h-5 w-5 text-primary" />
@@ -260,41 +304,30 @@ Certification: Preparing for AWS SAA-C03.
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center bg-zinc-900/40 p-8 rounded-3xl border border-white/5">
-                    <CircularSkill label="JavaScript" percentage={90} />
+                    <CircularSkill label="JavaScript" percentage={95} />
                     <CircularSkill label="Node.js" percentage={95} />
-                    <CircularSkill label="Python" percentage={70} />
-                    <CircularSkill label="SQL (Postgres)" percentage={85} />
+                    <CircularSkill label="Python" percentage={75} />
+                    <CircularSkill label="SQL (Postgres)" percentage={90} />
                   </div>
                 </div>
 
-                {/* Technical Skills Categorized */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-3 mb-8">
-                    <h2 className="text-xl font-black uppercase tracking-tight">Technical Toolkit</h2>
-                    <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {[
-                      { title: 'Cloud / DevOps', skills: ['AWS (EC2, RDS, S3, Lambda)', 'API Gateway', 'AWS IoT', 'CI/CD'], icon: <Cloud className="h-3 w-3" /> },
-                      { title: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis'], icon: <Database className="h-3 w-3" /> },
-                      { title: 'Architecture', skills: ['REST', 'MVC', 'Microservices', 'Event-Driven Architecture'], icon: <Layers className="h-3 w-3" /> },
-                      { title: 'Tools', skills: ['Git', 'Postman', 'Firebase', 'ActiveMQ', 'MQTT.fx'], icon: <Settings className="h-3 w-3" /> },
-                      { title: 'Testing', skills: ['Mocha', 'Jest'], icon: <TestTube2 className="h-3 w-3" /> },
-                      { title: 'Other', skills: ['OAuth2', 'JWT', 'Sequelize ORM', 'Socket.IO', 'Cron Jobs'], icon: <ShieldCheck className="h-3 w-3" /> },
-                    ].map((category, idx) => (
-                      <div key={idx} className="p-5 bg-zinc-800/20 rounded-2xl border border-white/5">
-                        <h3 className="text-[10px] font-black uppercase mb-4 tracking-widest text-primary flex items-center gap-2">
-                          {category.icon} {category.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-1.5">
-                          {category.skills.map(skill => (
-                            <Badge key={skill} variant="outline" className="bg-zinc-900 border-zinc-800 text-zinc-400 text-[9px] py-1 px-2">{skill}</Badge>
-                          ))}
-                        </div>
+                {/* Toolkit */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                  {[
+                    { title: 'Cloud / DevOps', skills: ['AWS (EC2, RDS, S3, Lambda)', 'API Gateway', 'AWS IoT', 'CI/CD'] },
+                    { title: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis'] },
+                    { title: 'Architecture', skills: ['REST', 'Microservices', 'Event-Driven'] },
+                    { title: 'Other', skills: ['OAuth2', 'JWT', 'Socket.IO', 'MQTT', 'Mocha', 'Jest'] },
+                  ].map((category, idx) => (
+                    <div key={idx} className="p-5 bg-zinc-800/20 rounded-2xl border border-white/5">
+                      <h3 className="text-[10px] font-black uppercase mb-4 tracking-widest text-primary">{category.title}</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {category.skills.map(skill => (
+                          <Badge key={skill} variant="outline" className="bg-zinc-900 border-zinc-800 text-zinc-400 text-[9px] py-1 px-2">{skill}</Badge>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Education */}
@@ -303,41 +336,11 @@ Certification: Preparing for AWS SAA-C03.
                     <h2 className="text-xl font-black uppercase tracking-tight">Education</h2>
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
-                  
-                  <div className="space-y-8">
-                    <div className="relative pl-8 border-l-2 border-primary/20">
-                      <div className="absolute left-[-11px] top-0 h-5 w-5 rounded-full bg-zinc-700 border-4 border-zinc-900" />
-                      <div className="text-[10px] text-zinc-500 font-black mb-1 tracking-[0.2em]">2014 — 2018</div>
-                      <h3 className="text-sm font-black text-zinc-200 uppercase">Bachelor of Engineering – Computer Science</h3>
-                      <div className="text-xs text-zinc-500 font-bold mb-2">Bansal Institute of Research and Technology, Bhopal</div>
-                      <Badge variant="outline" className="text-[9px]">CGPA: 6.63 / 10</Badge>
-                    </div>
-
-                    <div className="relative pl-8 border-l-2 border-primary/20">
-                      <div className="absolute left-[-11px] top-0 h-5 w-5 rounded-full bg-zinc-800 border-4 border-zinc-900" />
-                      <div className="text-[10px] text-zinc-500 font-black mb-1 tracking-[0.2em]">2013 — 2014</div>
-                      <h3 className="text-sm font-black text-zinc-200 uppercase">Higher Secondary Education</h3>
-                      <div className="text-xs text-zinc-500 font-bold mb-2">Holy Child Convent Hr. Sec. School, Satna</div>
-                      <Badge variant="outline" className="text-[9px]">Percentage: 61%</Badge>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Certifications */}
-                <div>
-                  <div className="flex items-center gap-3 mb-8">
-                    <h2 className="text-xl font-black uppercase tracking-tight">Certifications</h2>
-                    <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
-                  </div>
-                  <div className="p-6 bg-primary/5 border border-primary/10 rounded-2xl flex items-center gap-4">
-                    <div className="p-3 bg-primary/20 text-primary rounded-xl">
-                      <Award className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-black text-zinc-200 uppercase">AWS Certified Solutions Architect</h4>
-                      <p className="text-xs text-primary font-bold">Associate (SAA-C03)</p>
-                      <p className="text-[9px] text-zinc-500 mt-1 uppercase tracking-widest font-black">Preparing for completion</p>
-                    </div>
+                  <div className="relative pl-8 border-l-2 border-primary/20">
+                    <div className="absolute left-[-11px] top-0 h-5 w-5 rounded-full bg-zinc-700 border-4 border-zinc-900" />
+                    <div className="text-[10px] text-zinc-500 font-black mb-1 tracking-[0.2em]">2014 — 2018</div>
+                    <h3 className="text-sm font-black text-zinc-200 uppercase">B.E. Computer Science</h3>
+                    <div className="text-xs text-zinc-500 font-bold">Bansal Institute, Bhopal (CGPA: 6.63)</div>
                   </div>
                 </div>
               </TabsContent>
@@ -349,40 +352,40 @@ Certification: Preparing for AWS SAA-C03.
                   <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                 </div>
                 <div className="grid gap-6">
-                  {[
-                    { 
-                      title: 'QIKLET Marketplace', 
-                      tech: 'Node.js, PostgreSQL, Express, Socket.IO', 
-                      desc: 'Hyperlocal marketplace ecosystem with order management, real-time vendor dashboards, and complex delivery workflows.',
-                      img: PlaceHolderImages.find(i => i.id === 'qiklet-thumbnail')?.imageUrl 
-                    },
-                    { 
-                      title: 'Broan & NuTone IoT', 
-                      tech: 'AWS IoT Core, MQTT, Node.js, PostgreSQL', 
-                      desc: 'IoT device platform for onboarding, telemetry processing, and remote device control.',
-                      img: PlaceHolderImages.find(i => i.id === 'iot-platform-thumbnail')?.imageUrl 
-                    },
-                    { 
-                      title: 'Age Industries BLDC', 
-                      tech: 'MQTT, telemetry, Node.js APIs', 
-                      desc: 'Remote monitoring and control platform for smart BLDC fans with data processing for analytics.',
-                      img: PlaceHolderImages.find(i => i.id === 'age-industries-thumbnail')?.imageUrl 
-                    },
-                    { 
-                      title: 'AWS Cost Optimization', 
-                      tech: 'Cloud Engineering, Linux Migration', 
-                      desc: 'Migrated EC2 workloads from Windows to Linux, reducing cloud costs by over 60%.',
-                      img: PlaceHolderImages.find(i => i.id === 'aws-opt-thumbnail')?.imageUrl 
-                    },
-                  ].map((project, i) => (
+                  {projects.map((project, i) => (
                     <div key={i} className="group overflow-hidden bg-zinc-900 border border-white/5 hover:border-primary/30 transition-all duration-500 rounded-2xl flex flex-col sm:flex-row h-full">
                         <div className="sm:w-1/3 relative aspect-video sm:aspect-auto">
-                          <Image src={project.img || ''} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-50 group-hover:opacity-100" />
+                          <Image 
+                            src={project.img || ''} 
+                            alt={project.title} 
+                            fill 
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60" 
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="p-3 bg-zinc-900/80 rounded-full text-primary scale-0 group-hover:scale-100 transition-transform duration-500 border border-primary/30">
+                              {project.icon}
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex-1 p-5">
-                           <h3 className="font-black text-lg group-hover:text-primary transition-colors">{project.title}</h3>
-                           <p className="text-[9px] font-bold text-primary uppercase tracking-widest mt-1 mb-2">{project.tech}</p>
-                           <p className="text-xs text-zinc-500 line-clamp-3 leading-relaxed">{project.desc}</p>
+                        <div className="flex-1 p-5 flex flex-col justify-between">
+                           <div>
+                             <div className="flex items-center justify-between mb-1">
+                               <h3 className="font-black text-lg group-hover:text-primary transition-colors">{project.title}</h3>
+                               <Badge variant="outline" className="text-[8px] font-bold border-zinc-700 text-zinc-500 uppercase tracking-widest">{project.type}</Badge>
+                             </div>
+                             <p className="text-[9px] font-bold text-primary uppercase tracking-widest mb-2">{project.tech}</p>
+                             <p className="text-xs text-zinc-500 line-clamp-3 leading-relaxed mb-4">{project.desc}</p>
+                           </div>
+                           {project.link !== '#' && (
+                             <a 
+                               href={project.link} 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               className="inline-flex items-center gap-2 text-[10px] font-bold text-zinc-300 hover:text-primary transition-colors uppercase tracking-[0.15em]"
+                             >
+                               Visit Project <ChevronRight className="h-3 w-3" />
+                             </a>
+                           )}
                         </div>
                     </div>
                   ))}
