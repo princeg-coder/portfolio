@@ -8,8 +8,7 @@ import {
   User, FileText, Briefcase, Mail, Github, Linkedin, 
   Download, ChevronRight, Terminal, Database, 
   Server, Phone, MapPin, Code, Play, Globe, 
-  ExternalLink, ShieldCheck, Cloud, CheckCircle2,
-  Circle
+  ExternalLink, ShieldCheck, Cloud, CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -129,14 +128,24 @@ Certification: Preparing for AWS SAA-C03.
           <div className="md:w-5/12 border-r border-white/5 flex flex-col items-center justify-between p-10 text-center bg-gradient-to-b from-zinc-800/20 to-transparent">
             <div className="w-full">
               <div className="profile-img-container mb-8">
-                <div className="relative z-10 h-40 w-40 rounded-[2.5rem] overflow-hidden border-4 border-zinc-800 shadow-2xl mx-auto transform rotate-2">
-                  <Image 
-                    src={profileImg} 
-                    alt="Prince Gupta" 
-                    fill 
-                    className="object-cover -rotate-2 scale-110"
-                    data-ai-hint="professional portrait"
-                  />
+                <div className="relative z-10 h-40 w-40 rounded-[2.5rem] overflow-hidden border-4 border-zinc-800 shadow-2xl mx-auto transform rotate-2 bg-zinc-800">
+                  {profileImg ? (
+                    <Image 
+                      src={profileImg} 
+                      alt="Prince Gupta" 
+                      fill 
+                      className="object-cover -rotate-2 scale-110"
+                      data-ai-hint="professional portrait"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3087&auto=format&fit=crop';
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-600">
+                      <User className="h-16 w-16" />
+                    </div>
+                  )}
                 </div>
               </div>
               
