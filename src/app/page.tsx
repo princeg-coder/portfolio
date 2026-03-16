@@ -8,7 +8,7 @@ import {
   User, FileText, Briefcase, Mail, Github, Linkedin, 
   Download, ChevronRight, Terminal, Database, 
   Server, Phone, MapPin, Code, Play, Globe, 
-  ExternalLink, ShieldCheck, Cloud, CheckCircle2
+  ExternalLink, ShieldCheck, Cloud, CheckCircle2, Send, Award, Zap
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -87,6 +87,15 @@ Certification: Preparing for AWS SAA-C03.
     });
   };
 
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent!",
+      description: "Thanks for reaching out. I'll get back to you shortly.",
+    });
+    (e.target as HTMLFormElement).reset();
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 selection:bg-primary/30">
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -153,8 +162,13 @@ Certification: Preparing for AWS SAA-C03.
               </div>
               
               <h1 className="text-2xl font-black mb-1 tracking-tight">Prince Gupta</h1>
-              <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+              <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-1">
                 Senior Backend Engineer
+              </div>
+              <div className="flex items-center justify-center gap-2 mb-6 mt-2">
+                <span className="px-3 py-1 bg-zinc-700/60 border border-zinc-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">⚡ Node.js</span>
+                <span className="text-zinc-500 font-black text-xs">&</span>
+                <span className="px-3 py-1 bg-zinc-700/60 border border-zinc-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">☁ AWS Developer</span>
               </div>
               
               <div className="space-y-3 mb-8">
@@ -176,7 +190,7 @@ Certification: Preparing for AWS SAA-C03.
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
                   <Github className="h-4 w-4" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
+                <a href="https://www.linkedin.com/in/prince-gupta-3b6987152/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
                   <Linkedin className="h-4 w-4" />
                 </a>
               </div>
@@ -227,6 +241,36 @@ Certification: Preparing for AWS SAA-C03.
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Availability Banner */}
+                <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/20 rounded-2xl mb-8">
+                  <span className="flex h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse shrink-0" />
+                  <p className="text-xs font-bold text-green-400 uppercase tracking-widest">Available for new opportunities</p>
+                </div>
+
+                {/* What I Do */}
+                <div className="mb-4">
+                  <div className="flex items-center gap-3 mb-6">
+                    <h2 className="text-xl font-black uppercase tracking-tight">What I Do</h2>
+                    <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {[
+                      { icon: <Server className="h-5 w-5" />, title: 'Backend Architecture', desc: 'Scalable REST API design using Node.js, Express & microservices.' },
+                      { icon: <Cloud className="h-5 w-5" />, title: 'Cloud Infrastructure', desc: 'AWS EC2, RDS, S3, Lambda deployment & cost optimization.' },
+                      { icon: <Zap className="h-5 w-5" />, title: 'Real-time Systems', desc: 'Socket.IO, MQTT & WebSocket event-driven communication.' },
+                      { icon: <Database className="h-5 w-5" />, title: 'Database Engineering', desc: 'PostgreSQL, MongoDB & MySQL schema design & optimization.' },
+                    ].map((svc, i) => (
+                      <div key={i} className="p-5 bg-zinc-800/30 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors group">
+                        <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                          {svc.icon}
+                        </div>
+                        <h3 className="text-xs font-black uppercase tracking-widest mb-1 text-zinc-200">{svc.title}</h3>
+                        <p className="text-[11px] text-zinc-500 leading-relaxed">{svc.desc}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </TabsContent>
 
@@ -317,6 +361,37 @@ Certification: Preparing for AWS SAA-C03.
                     </div>
                   </div>
                 </div>
+
+                {/* Certifications */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-8">
+                    <h2 className="text-xl font-black uppercase tracking-tight">Certifications</h2>
+                    <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 p-5 bg-zinc-800/30 rounded-2xl border border-yellow-500/20">
+                      <div className="p-3 bg-yellow-500/10 rounded-xl shrink-0">
+                        <Award className="h-5 w-5 text-yellow-400" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                          <h3 className="text-sm font-black text-zinc-200">AWS Solutions Architect – Associate</h3>
+                          <span className="px-2 py-0.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-full text-[9px] font-black uppercase tracking-widest">In Progress</span>
+                        </div>
+                        <p className="text-xs text-zinc-500 font-bold">Amazon Web Services · SAA-C03 · 2026</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 p-5 bg-zinc-800/30 rounded-2xl border border-white/5">
+                      <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                        <CheckCircle2 className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-black text-zinc-200">Node.js Backend Development</h3>
+                        <p className="text-xs text-zinc-500 font-bold">4.5+ Years Production Experience</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </TabsContent>
 
               {/* Works Section */}
@@ -363,21 +438,66 @@ Certification: Preparing for AWS SAA-C03.
 
               {/* Contact Section */}
               <TabsContent value="contact" className="m-0 animate-in fade-in slide-in-from-right-8 duration-700">
-                <div className="flex items-center gap-3 mb-8">
-                  <h2 className="text-xl font-black uppercase tracking-tight">Contact</h2>
+                <div className="flex items-center gap-3 mb-6">
+                  <h2 className="text-xl font-black uppercase tracking-tight">Get In Touch</h2>
                   <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                 </div>
-                <div className="grid sm:grid-cols-2 gap-6 mb-8">
-                  <div className="p-6 bg-zinc-800/30 rounded-2xl border border-white/5 flex flex-col items-center text-center">
-                    <Mail className="h-8 w-8 text-primary mb-4" />
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">Email</h4>
-                    <p className="text-xs font-bold text-zinc-200">princegupta619@gmail.com</p>
+                <p className="text-zinc-400 text-sm mb-6 leading-relaxed">Open to backend engineering roles and freelance projects. Let's build something great together.</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                  <a href="mailto:princegupta619@gmail.com" className="flex items-center gap-3 p-4 bg-zinc-800/30 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
+                    <div className="p-2 bg-primary/10 text-primary rounded-lg group-hover:bg-primary/20 transition-colors shrink-0"><Mail className="h-4 w-4" /></div>
+                    <div className="min-w-0">
+                      <div className="text-[9px] font-black uppercase text-zinc-500 tracking-widest">Email</div>
+                      <div className="text-[10px] font-bold text-zinc-200 truncate">princegupta619@gmail.com</div>
+                    </div>
+                  </a>
+                  <a href="tel:+919630122786" className="flex items-center gap-3 p-4 bg-zinc-800/30 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
+                    <div className="p-2 bg-primary/10 text-primary rounded-lg group-hover:bg-primary/20 transition-colors shrink-0"><Phone className="h-4 w-4" /></div>
+                    <div>
+                      <div className="text-[9px] font-black uppercase text-zinc-500 tracking-widest">Phone</div>
+                      <div className="text-[10px] font-bold text-zinc-200">+91 9630122786</div>
+                    </div>
+                  </a>
+                  <div className="flex items-center gap-3 p-4 bg-zinc-800/30 rounded-2xl border border-white/5">
+                    <div className="p-2 bg-primary/10 text-primary rounded-lg shrink-0"><MapPin className="h-4 w-4" /></div>
+                    <div>
+                      <div className="text-[9px] font-black uppercase text-zinc-500 tracking-widest">Location</div>
+                      <div className="text-[10px] font-bold text-zinc-200">Remote | India</div>
+                    </div>
                   </div>
-                  <div className="p-6 bg-zinc-800/30 rounded-2xl border border-white/5 flex flex-col items-center text-center">
-                    <Phone className="h-8 w-8 text-primary mb-4" />
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">Phone</h4>
-                    <p className="text-xs font-bold text-zinc-200">+91 9630122786</p>
-                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <a href="https://github.com/princeg-coder" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-zinc-800/30 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
+                    <div className="p-2 bg-primary/10 text-primary rounded-lg group-hover:bg-primary/20 transition-colors shrink-0"><Github className="h-4 w-4" /></div>
+                    <div>
+                      <div className="text-[9px] font-black uppercase text-zinc-500 tracking-widest">GitHub</div>
+                      <div className="text-[10px] font-bold text-zinc-200">princeg-coder</div>
+                    </div>
+                  </a>
+                  <a href="https://www.linkedin.com/in/prince-gupta-3b6987152/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-zinc-800/30 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
+                    <div className="p-2 bg-primary/10 text-primary rounded-lg group-hover:bg-primary/20 transition-colors shrink-0"><Linkedin className="h-4 w-4" /></div>
+                    <div>
+                      <div className="text-[9px] font-black uppercase text-zinc-500 tracking-widest">LinkedIn</div>
+                      <div className="text-[10px] font-bold text-zinc-200">prince-gupta</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="p-6 bg-zinc-800/20 rounded-2xl border border-white/5">
+                  <h3 className="text-sm font-black uppercase tracking-widest mb-5 text-zinc-300">Send a Message</h3>
+                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <input name="name" type="text" placeholder="Your Name" required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
+                      <input name="email" type="email" placeholder="Your Email" required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
+                    </div>
+                    <input name="subject" type="text" placeholder="Subject" className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
+                    <textarea name="message" placeholder="Your message..." rows={4} required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600 resize-none" />
+                    <button type="submit" className="w-full h-11 bg-primary hover:bg-primary/90 text-black font-black text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 transition-colors">
+                      Send Message <Send className="h-3.5 w-3.5" />
+                    </button>
+                  </form>
                 </div>
               </TabsContent>
             </Tabs>

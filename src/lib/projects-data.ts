@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
     link: 'https://schoolmanagement.dream-filler.com/',
     type: 'Web Application',
     iconName: 'Globe',
-    img: 'https://picsum.photos/seed/school-er/800/600'
+    img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop'
   },
   {
     id: 'exam-portal',
@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
     link: 'https://examportal.dream-filler.com/',
     type: 'Web Application',
     iconName: 'Globe',
-    img: 'https://picsum.photos/seed/exam-portal/800/600'
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop'
   },
   {
     id: 'core-desk',
@@ -149,7 +149,7 @@ export const PROJECTS: Project[] = [
     link: 'https://coredesk.vercel.app/',
     type: 'Web Application',
     iconName: 'ExternalLink',
-    img: 'https://picsum.photos/seed/core-desk/800/600'
+    img: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&h=600&fit=crop'
   },
   {
     id: 'aws-optimization',

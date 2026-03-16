@@ -9,26 +9,26 @@
     {
       "id": "qiklet-thumbnail",
       "description": "QIKLET - Hyperlocal Marketplace & POS Platform",
-      "imageUrl": "https://picsum.photos/seed/qiklet-pos/800/600",
-      "imageHint": "marketplace dashboard"
+      "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "imageHint": "marketplace pos system"
     },
     {
       "id": "iot-platform-thumbnail",
       "description": "Broan & NuTone - IoT Device Platform",
-      "imageUrl": "https://picsum.photos/seed/iot-smart/800/600",
-      "imageHint": "iot telemetry"
+      "imageUrl": "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&h=600&fit=crop",
+      "imageHint": "smart home iot"
     },
     {
       "id": "age-industries-thumbnail",
       "description": "Age Industries - BLDC Fan IoT Platform",
-      "imageUrl": "https://picsum.photos/seed/fan-iot/800/600",
-      "imageHint": "smart home"
+      "imageUrl": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&h=600&fit=crop",
+      "imageHint": "ceiling fan bldc"
     },
     {
       "id": "aws-opt-thumbnail",
       "description": "AWS Infrastructure Cost Optimization",
-      "imageUrl": "https://picsum.photos/seed/aws-cloud-opt/800/600",
-      "imageHint": "cloud architecture"
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      "imageHint": "cloud infrastructure"
     }
   ]
 }
