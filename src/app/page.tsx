@@ -8,13 +8,12 @@ import {
   User, FileText, Briefcase, Mail, Github, Linkedin, 
   Download, ChevronRight, Terminal, Database, 
   Server, Phone, MapPin, Code, Play, Globe, 
-  ExternalLink, ShieldCheck, Cloud, CheckCircle2, Send, Award, Zap
+  ExternalLink, ShieldCheck, Cloud, CheckCircle2, Award, Zap
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { toast } from '@/hooks/use-toast';
 import { PROJECTS } from '@/lib/projects-data';
 
 const CircularSkill = ({ label, percentage }: { label: string; percentage: number }) => {
@@ -68,33 +67,6 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('resume');
 
   const profileImg = PlaceHolderImages.find(img => img.id === 'profile-photo')?.imageUrl || '';
-
-  const handleCopyPrompt = () => {
-    const context = `
-Developer: Prince Gupta
-Role: Senior Backend Developer (Node.js)
-Experience: 4.5+ years
-Core Skills: Node.js, Express.js, AWS (EC2, RDS, S3, Lambda, API Gateway), PostgreSQL, MongoDB, Microservices, Socket.IO, MQTT.
-Key Projects: QIKLET (Hyperlocal Marketplace), Broan & NuTone (IoT), Age Industries (IoT), School Management, Exam Portal, Core Desk.
-Education: B.E. in CS (2018).
-Certification: Preparing for AWS SAA-C03.
-    `.trim();
-    
-    navigator.clipboard.writeText(context);
-    toast({
-      title: "AI Context Copied!",
-      description: "Professional background ready for your AI assistant.",
-    });
-  };
-
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you shortly.",
-    });
-    (e.target as HTMLFormElement).reset();
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 selection:bg-primary/30">
@@ -196,14 +168,11 @@ Certification: Preparing for AWS SAA-C03.
               </div>
             </div>
 
-            <div className="grid grid-cols-2 w-full gap-3 border-t border-white/5 pt-8 mt-auto">
+            <div className="grid grid-cols-1 w-full gap-3 border-t border-white/5 pt-8 mt-auto">
               <Button asChild variant="outline" className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest border-zinc-800 hover:bg-zinc-800">
                 <a href="/CVNode.pdf" download="Prince-Gupta-CV.pdf">
                   CV <Download className="ml-2 h-3 w-3" />
                 </a>
-              </Button>
-              <Button onClick={handleCopyPrompt} className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest bg-primary text-black hover:bg-primary/90">
-                AI Context
               </Button>
             </div>
           </div>
@@ -485,20 +454,6 @@ Certification: Preparing for AWS SAA-C03.
                   </a>
                 </div>
 
-                <div className="p-6 bg-zinc-800/20 rounded-2xl border border-white/5">
-                  <h3 className="text-sm font-black uppercase tracking-widest mb-5 text-zinc-300">Send a Message</h3>
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <input name="name" type="text" placeholder="Your Name" required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
-                      <input name="email" type="email" placeholder="Your Email" required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
-                    </div>
-                    <input name="subject" type="text" placeholder="Subject" className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600" />
-                    <textarea name="message" placeholder="Your message..." rows={4} required className="w-full bg-zinc-900/80 border border-zinc-700 text-zinc-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-primary/60 transition-colors placeholder:text-zinc-600 resize-none" />
-                    <button type="submit" className="w-full h-11 bg-primary hover:bg-primary/90 text-black font-black text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 transition-colors">
-                      Send Message <Send className="h-3.5 w-3.5" />
-                    </button>
-                  </form>
-                </div>
               </TabsContent>
             </Tabs>
           </div>
