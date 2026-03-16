@@ -1,12 +1,9 @@
-
 'use client';
 
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
-import { ProjectAIInsight } from '@/components/ui/ProjectAIInsight';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const projects = [
@@ -100,11 +97,6 @@ export function Projects() {
                       </li>
                     ))}
                   </ul>
-
-                  <ProjectAIInsight 
-                    projectName={project.title} 
-                    projectDescription={project.description + ' ' + project.features.join(', ')} 
-                  />
                 </div>
               </div>
             </div>
