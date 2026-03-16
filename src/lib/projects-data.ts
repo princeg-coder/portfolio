@@ -24,19 +24,20 @@ export const PROJECTS: Project[] = [
     subtitle: 'Hyperlocal Marketplace & POS Platform',
     tech: ['Node.js', 'Express.js', 'PostgreSQL', 'Multer', 'AWS S3', 'AWS EC2 Linux', 'Socket.IO'],
     shortDesc: 'Architected the entire backend ecosystem for a high-traffic hyperlocal marketplace. Built scalable REST APIs and managed full AWS infrastructure.',
-    longDescription: 'QIKLET is a comprehensive hyperlocal commerce ecosystem connecting shops, customers, and delivery agents. As the lead Backend Developer, I was responsible for designing a modular architecture that could handle high-concurrency order processing and real-time state synchronization.',
+    longDescription: 'QIKLET is a comprehensive hyperlocal commerce ecosystem connecting shops, customers, and delivery agents. As the lead Backend Developer, I was responsible for designing a modular architecture that could handle high-concurrency order processing and real-time state synchronization. I took full ownership of the backend and the entire AWS infrastructure deployment.',
     responsibilities: [
-      'Designed and developed scalable REST APIs for Android and iOS mobile applications.',
+      'Engineered and deployed the entire backend architecture from scratch using Node.js and PostgreSQL.',
+      'Developed scalable REST APIs for both Android and iOS mobile applications.',
       'Implemented real-time order tracking and notifications using Socket.IO.',
-      'Integrated Multer for efficient image processing and multi-part uploads to AWS S3.',
-      'Built a robust POS integration layer for vendor inventory management.',
-      'Managed full deployment on AWS EC2 Linux instances, including shell scripting for automation.'
+      'Integrated Multer for efficient image processing and multi-part uploads to AWS S3 storage buckets.',
+      'Managed full AWS deployment, including setting up and configuring EC2 Linux instances, networking, and security.',
+      'Automated deployment workflows and maintained server-side stability in a production environment.'
     ],
     architecture: [
-      'Service-oriented backend with Node.js and Express.',
-      'Relational data modeling with PostgreSQL for ACID compliance.',
-      'AWS S3 for distributed media storage.',
-      'Production monitoring using PM2 and CloudWatch.'
+      'Node.js & Express RESTful microservices.',
+      'PostgreSQL for transactionally safe order management.',
+      'AWS S3 for distributed media and document storage.',
+      'AWS EC2 Linux instances for production hosting.'
     ],
     link: 'https://play.google.com/store/apps/details?id=com.dreamfiller.qiklet',
     type: 'Android & iOS App',
@@ -72,7 +73,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'BLDC Fan IoT Platform',
     tech: ['Node.js', 'MQTT', 'PostgreSQL', 'Real-time APIs'],
     shortDesc: 'Developed backend services for smart BLDC fans, enabling remote telemetry and analytics.',
-    longDescription: 'A custom IoT solution for smart fan hardware. I built the backend services that allow users to control their fans remotely and view usage analytics through telemetry data processing.',
+    longDescription: 'A custom IoT solution for smart fan hardware. Currently in development, I am building the backend services that allow users to control their fans remotely and view usage analytics through telemetry data processing.',
     responsibilities: [
       'Created backend services for remote monitoring of BLDC fans.',
       'Implemented MQTT-based communication for device state management.',
@@ -83,7 +84,7 @@ export const PROJECTS: Project[] = [
       'Optimized database schemas for time-series telemetry data.'
     ],
     link: '#',
-    type: 'Development Project',
+    type: 'In Development',
     iconName: 'ShieldCheck',
     img: PlaceHolderImages.find(i => i.id === 'age-industries-thumbnail')?.imageUrl || 'https://picsum.photos/seed/fan/800/600'
   },
@@ -156,18 +157,18 @@ export const PROJECTS: Project[] = [
     subtitle: 'Infrastructure Cost & Performance Engineering',
     tech: ['AWS EC2', 'Linux', 'Networking', 'VPC', 'Security Groups'],
     shortDesc: 'Reduced infrastructure costs by 60% through strategic migration and network redesign.',
-    longDescription: 'A critical engineering project where I audited the existing Windows-based server farm and migrated production workloads to a more efficient Linux-based environment.',
+    longDescription: 'Completed infrastructure engineering project where I audited the existing Windows-based server farm and migrated production workloads to a more efficient Linux-based environment.',
     responsibilities: [
-      'Migrated production EC2 instances from Windows to Linux, improving runtime efficiency.',
+      'Successfully migrated production EC2 instances from Windows to Linux, significantly improving runtime efficiency.',
       'Redesigned VPC, subnets, and security groups for enhanced security and cost-efficiency.',
-      'Implemented auto-scaling groups and refined instance sizing, resulting in a 60% cost reduction.'
+      'Implemented auto-scaling groups and refined instance sizing, resulting in a 60% reduction in monthly cloud expenditure.'
     ],
     architecture: [
       'Highly available multi-AZ network design.',
       'Linux-based application servers for lower licensing costs and better performance.'
     ],
     link: '#',
-    type: 'Case Study',
+    type: 'Case Study (Complete)',
     iconName: 'ShieldCheck',
     img: PlaceHolderImages.find(i => i.id === 'aws-opt-thumbnail')?.imageUrl || 'https://picsum.photos/seed/aws/800/600'
   }

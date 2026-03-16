@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  ArrowLeft, ChevronRight, Play, Globe, 
+  ArrowLeft, Play, Globe, 
   ExternalLink, ShieldCheck, CheckCircle2, 
   Terminal, Server, Database, Cloud, Code 
 } from 'lucide-react';
@@ -108,6 +108,27 @@ export default function ProjectDetails() {
                 ))}
               </ul>
             </section>
+
+            {/* Launch Links Section at the Bottom */}
+            {project.link !== '#' && (
+              <section className="pt-8 border-t border-white/5">
+                <div className="flex flex-col gap-6">
+                  <div>
+                    <h2 className="text-xl font-black uppercase tracking-tight mb-2">Live Access</h2>
+                    <p className="text-xs text-zinc-500">Visit the live application or download the mobile app via the link below.</p>
+                  </div>
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center justify-center gap-4 h-16 bg-primary text-black font-black uppercase tracking-[0.2em] text-[11px] rounded-2xl hover:bg-primary/90 transition-all shadow-2xl shadow-primary/20 group"
+                  >
+                    Launch Project {IconMap[project.iconName]}
+                    <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </a>
+                </div>
+              </section>
+            )}
           </div>
 
           {/* Sidebar Info */}
@@ -125,22 +146,6 @@ export default function ProjectDetails() {
                 ))}
               </div>
             </section>
-
-            {project.link !== '#' && (
-              <section>
-                <div className="flex items-center gap-3 mb-6">
-                  <h2 className="text-xl font-black uppercase tracking-tight">Launch</h2>
-                </div>
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex w-full items-center justify-center gap-3 h-14 bg-primary text-black font-black uppercase tracking-[0.2em] text-[10px] rounded-2xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/10"
-                >
-                  Visit Project {IconMap[project.iconName]}
-                </a>
-              </section>
-            )}
 
             <section className="p-6 bg-zinc-900/40 rounded-[2rem] border border-white/5">
                <div className="flex items-center gap-3 mb-4">
