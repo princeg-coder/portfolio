@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "profile-photo",
+      "description": "Professional Headshot",
+      "imageUrl": "https://picsum.photos/seed/prince/400/400",
+      "imageHint": "man portrait"
+    },
+    {
       "id": "qiklet-thumbnail",
       "description": "Hyperlocal Marketplace Dashboard",
       "imageUrl": "https://picsum.photos/seed/qiklet/800/600",
@@ -17,24 +23,6 @@
       "description": "Cloud Infrastructure Optimization",
       "imageUrl": "https://picsum.photos/seed/aws/800/600",
       "imageHint": "cloud server"
-    },
-    {
-      "id": "microservices-arch",
-      "description": "Microservices Architecture Diagram",
-      "imageUrl": "https://picsum.photos/seed/micro/1200/800",
-      "imageHint": "software architecture"
-    },
-    {
-      "id": "api-gateway-arch",
-      "description": "API Gateway Architecture Diagram",
-      "imageUrl": "https://picsum.photos/seed/api/1200/800",
-      "imageHint": "api design"
-    },
-    {
-      "id": "event-driven-arch",
-      "description": "Event Driven Architecture Diagram",
-      "imageUrl": "https://picsum.photos/seed/event/1200/800",
-      "imageHint": "message queue"
     }
   ]
 }
