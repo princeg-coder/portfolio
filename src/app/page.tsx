@@ -183,8 +183,10 @@ Certification: Preparing for AWS SAA-C03.
             </div>
 
             <div className="grid grid-cols-2 w-full gap-3 border-t border-white/5 pt-8 mt-auto">
-              <Button variant="outline" className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest border-zinc-800 hover:bg-zinc-800">
-                CV <Download className="ml-2 h-3 w-3" />
+              <Button asChild variant="outline" className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest border-zinc-800 hover:bg-zinc-800">
+                <a href="/CVNode.pdf" download="Prince-Gupta-CV.pdf">
+                  CV <Download className="ml-2 h-3 w-3" />
+                </a>
               </Button>
               <Button onClick={handleCopyPrompt} className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest bg-primary text-black hover:bg-primary/90">
                 AI Context

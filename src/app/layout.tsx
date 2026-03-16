@@ -4,6 +4,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'PORTFOLIO | Prince Gupta - Senior Backend Engineer',
   description: 'Portfolio of Prince Gupta, a Senior Backend Developer specializing in Node.js, AWS, and scalable backend systems.',
+  icons: {
+    icon: '/icons8-portfolio-80.png',
+    shortcut: '/icons8-portfolio-80.png',
+    apple: '/icons8-portfolio-80.png',
+  },
 };
 
 export default function RootLayout({
