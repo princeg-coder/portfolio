@@ -10,11 +10,50 @@ import {
   Settings, TestTube2, Workflow, Cloud
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { toast } from '@/hooks/use-toast';
+
+const CircularSkill = ({ label, percentage }: { label: string; percentage: number }) => {
+  const radius = 36;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="flex flex-col items-center gap-3">
+      <div className="relative w-24 h-24">
+        <svg className="w-full h-full transform -rotate-90">
+          <circle
+            cx="48"
+            cy="48"
+            r={radius}
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="transparent"
+            className="text-zinc-800"
+          />
+          <circle
+            cx="48"
+            cy="48"
+            r={radius}
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="transparent"
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            strokeLinecap="round"
+            className="text-primary transition-all duration-1000 ease-out"
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-zinc-200">
+          {percentage}%
+        </div>
+      </div>
+      <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-500 text-center">{label}</span>
+    </div>
+  );
+};
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('resume');
@@ -98,25 +137,25 @@ Certification: Preparing for AWS SAA-C03.
               </div>
               
               <div className="space-y-3 mb-8">
-                <div className="flex items-center justify-center gap-3 text-zinc-400 text-xs">
-                  <Mail className="h-3 w-3 text-primary" />
-                  <span>princegupta619@gmail.com</span>
+                <div className="flex items-center justify-center gap-3 text-zinc-400 text-xs text-left">
+                  <Mail className="h-3 w-3 text-primary shrink-0" />
+                  <span className="truncate">princegupta619@gmail.com</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-zinc-400 text-xs">
-                  <Phone className="h-3 w-3 text-primary" />
+                  <Phone className="h-3 w-3 text-primary shrink-0" />
                   <span>+91 9630122786</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-zinc-400 text-xs">
-                  <MapPin className="h-3 w-3 text-primary" />
+                  <MapPin className="h-3 w-3 text-primary shrink-0" />
                   <span>Remote | India</span>
                 </div>
               </div>
 
               <div className="flex justify-center gap-3 mb-8">
-                <a href="#" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
                   <Github className="h-4 w-4" />
                 </a>
-                <a href="#" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-800/50 rounded-xl hover:bg-primary hover:text-black transition-all duration-300">
                   <Linkedin className="h-4 w-4" />
                 </a>
               </div>
@@ -153,7 +192,7 @@ Certification: Preparing for AWS SAA-C03.
                 <div className="grid sm:grid-cols-2 gap-4 mb-10">
                   {[
                     { label: 'Experience', value: '4.5+ Years', icon: <Briefcase className="h-4 w-4" /> },
-                    { label: 'Cloud Focus', value: 'AWS (SAA-C03)', icon: <Database className="h-4 w-4" /> },
+                    { label: 'Cloud Focus', value: 'AWS (SAA-C03)', icon: <Cloud className="h-4 w-4" /> },
                     { label: 'Core Stack', value: 'Node.js / Express', icon: <Terminal className="h-4 w-4" /> },
                     { label: 'Architecture', value: 'Microservices', icon: <Server className="h-4 w-4" /> },
                   ].map((info, idx) => (
@@ -213,23 +252,36 @@ Certification: Preparing for AWS SAA-C03.
                   </div>
                 </div>
 
-                {/* Skills Section */}
+                {/* Coding Skills Visual Section */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-10">
+                    <Code className="h-5 w-5 text-primary" />
+                    <h2 className="text-xl font-black uppercase tracking-tight">Coding</h2>
+                    <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center bg-zinc-900/40 p-8 rounded-3xl border border-white/5">
+                    <CircularSkill label="JavaScript" percentage={90} />
+                    <CircularSkill label="Node.js" percentage={95} />
+                    <CircularSkill label="Python" percentage={70} />
+                    <CircularSkill label="SQL (Postgres)" percentage={85} />
+                  </div>
+                </div>
+
+                {/* Technical Skills Categorized */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-8">
-                    <h2 className="text-xl font-black uppercase tracking-tight">Technical Skills</h2>
+                    <h2 className="text-xl font-black uppercase tracking-tight">Technical Toolkit</h2>
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {[
-                      { title: 'Languages', skills: ['JavaScript', 'Python'], icon: <Globe className="h-3 w-3" /> },
-                      { title: 'Frameworks', skills: ['Node.js', 'Express.js'], icon: <Terminal className="h-3 w-3" /> },
                       { title: 'Cloud / DevOps', skills: ['AWS (EC2, RDS, S3, Lambda)', 'API Gateway', 'AWS IoT', 'CI/CD'], icon: <Cloud className="h-3 w-3" /> },
-                      { title: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'MySQL'], icon: <Database className="h-3 w-3" /> },
+                      { title: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis'], icon: <Database className="h-3 w-3" /> },
                       { title: 'Architecture', skills: ['REST', 'MVC', 'Microservices', 'Event-Driven Architecture'], icon: <Layers className="h-3 w-3" /> },
                       { title: 'Tools', skills: ['Git', 'Postman', 'Firebase', 'ActiveMQ', 'MQTT.fx'], icon: <Settings className="h-3 w-3" /> },
                       { title: 'Testing', skills: ['Mocha', 'Jest'], icon: <TestTube2 className="h-3 w-3" /> },
-                      { title: 'Other', skills: ['OAuth2', 'JWT', 'Sequelize ORM', 'Socket.IO', 'Cron Jobs', 'NoSQL'], icon: <ShieldCheck className="h-3 w-3" /> },
+                      { title: 'Other', skills: ['OAuth2', 'JWT', 'Sequelize ORM', 'Socket.IO', 'Cron Jobs'], icon: <ShieldCheck className="h-3 w-3" /> },
                     ].map((category, idx) => (
                       <div key={idx} className="p-5 bg-zinc-800/20 rounded-2xl border border-white/5">
                         <h3 className="text-[10px] font-black uppercase mb-4 tracking-widest text-primary flex items-center gap-2">
@@ -323,8 +375,7 @@ Certification: Preparing for AWS SAA-C03.
                       img: PlaceHolderImages.find(i => i.id === 'aws-opt-thumbnail')?.imageUrl 
                     },
                   ].map((project, i) => (
-                    <Card key={i} className="group overflow-hidden bg-zinc-900 border-white/5 hover:border-primary/30 transition-all duration-500 rounded-2xl">
-                      <div className="flex flex-col sm:flex-row h-full">
+                    <div key={i} className="group overflow-hidden bg-zinc-900 border border-white/5 hover:border-primary/30 transition-all duration-500 rounded-2xl flex flex-col sm:flex-row h-full">
                         <div className="sm:w-1/3 relative aspect-video sm:aspect-auto">
                           <Image src={project.img || ''} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-50 group-hover:opacity-100" />
                         </div>
@@ -333,8 +384,7 @@ Certification: Preparing for AWS SAA-C03.
                            <p className="text-[9px] font-bold text-primary uppercase tracking-widest mt-1 mb-2">{project.tech}</p>
                            <p className="text-xs text-zinc-500 line-clamp-3 leading-relaxed">{project.desc}</p>
                         </div>
-                      </div>
-                    </Card>
+                    </div>
                   ))}
                 </div>
               </TabsContent>
@@ -359,10 +409,10 @@ Certification: Preparing for AWS SAA-C03.
                 </div>
                 <form className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <input className="w-full h-12 px-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs" placeholder="Full Name" />
-                    <input className="w-full h-12 px-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs" placeholder="Email Address" />
+                    <input className="w-full h-12 px-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs text-white" placeholder="Full Name" />
+                    <input className="w-full h-12 px-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs text-white" placeholder="Email Address" />
                   </div>
-                  <textarea className="w-full p-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs min-h-[120px] resize-none" placeholder="How can I help you build your backend?" />
+                  <textarea className="w-full p-5 bg-zinc-800/30 border border-white/5 rounded-xl outline-none focus:border-primary/50 transition-all text-xs min-h-[120px] resize-none text-white" placeholder="How can I help you build your backend?" />
                   <Button className="w-full h-14 bg-primary hover:bg-primary/90 text-black font-black uppercase tracking-[0.2em] text-[10px] rounded-xl shadow-xl shadow-primary/10">
                     Send Transmission <Send className="ml-3 h-4 w-4" />
                   </Button>
