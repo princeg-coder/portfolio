@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "qiklet-thumbnail",
+      "description": "Hyperlocal Marketplace Dashboard",
+      "imageUrl": "https://picsum.photos/seed/qiklet/800/600",
+      "imageHint": "ecommerce dashboard"
+    },
+    {
+      "id": "iot-platform-thumbnail",
+      "description": "IoT Device Monitoring Platform",
+      "imageUrl": "https://picsum.photos/seed/iot/800/600",
+      "imageHint": "iot telemetry"
+    },
+    {
+      "id": "aws-opt-thumbnail",
+      "description": "Cloud Infrastructure Optimization",
+      "imageUrl": "https://picsum.photos/seed/aws/800/600",
+      "imageHint": "cloud server"
+    },
+    {
+      "id": "microservices-arch",
+      "description": "Microservices Architecture Diagram",
+      "imageUrl": "https://picsum.photos/seed/micro/1200/800",
+      "imageHint": "software architecture"
+    },
+    {
+      "id": "api-gateway-arch",
+      "description": "API Gateway Architecture Diagram",
+      "imageUrl": "https://picsum.photos/seed/api/1200/800",
+      "imageHint": "api design"
+    },
+    {
+      "id": "event-driven-arch",
+      "description": "Event Driven Architecture Diagram",
+      "imageUrl": "https://picsum.photos/seed/event/1200/800",
+      "imageHint": "message queue"
+    }
+  ]
 }
