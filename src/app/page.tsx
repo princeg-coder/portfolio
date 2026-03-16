@@ -128,13 +128,15 @@ Certification: Preparing for AWS SAA-C03.
           <div className="md:w-5/12 border-r border-white/5 flex flex-col items-center justify-between p-10 text-center bg-gradient-to-b from-zinc-800/20 to-transparent">
             <div className="w-full">
               <div className="profile-img-container mb-8">
-                <div className="relative z-10 h-40 w-40 rounded-[2.5rem] overflow-hidden border-4 border-zinc-800 shadow-2xl mx-auto transform rotate-2 bg-zinc-800">
+                <div className="profile-portrait-shell">
+                  <div className="profile-portrait-accent" />
+                  <div className="profile-portrait-photo">
                   {profileImg ? (
                     <Image 
                       src={profileImg} 
                       alt="Prince Gupta" 
                       fill 
-                      className="object-cover -rotate-2 scale-110"
+                      className="object-cover profile-portrait-image"
                       data-ai-hint="professional portrait"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -146,6 +148,7 @@ Certification: Preparing for AWS SAA-C03.
                       <User className="h-16 w-16" />
                     </div>
                   )}
+                  </div>
                 </div>
               </div>
               
