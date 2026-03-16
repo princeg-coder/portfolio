@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -32,8 +31,8 @@ export function Navbar() {
         <div className={`glass px-6 py-3 rounded-full border-white/10 transition-all ${isScrolled ? 'bg-card/80 shadow-2xl shadow-primary/10' : 'bg-transparent border-transparent'}`}>
           <div className="flex items-center justify-between">
             <Link href="/" className="text-xl font-headline font-bold flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-black">A</div>
-              <span className="hidden sm:inline">ArchitechNexus</span>
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-black">P</div>
+              <span className="hidden sm:inline">PORTFOLIO</span>
             </Link>
 
             <div className="hidden md:flex items-center gap-8">

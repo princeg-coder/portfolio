@@ -1,8 +1,7 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronRight, Github, Linkedin, Mail, Cloud, Server, Database, Code, Cpu } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -10,6 +9,36 @@ export function Hero() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
       <div className="absolute inset-0 bg-mesh-gradient pointer-events-none" />
+      
+      {/* Backend Floating Elements */}
+      <div className="absolute top-1/4 left-10 opacity-20 animate-float hidden lg:block">
+        <div className="glass p-4 rounded-2xl border-primary/20 flex flex-col items-center gap-2">
+          <Cpu className="h-8 w-8 text-primary" />
+          <span className="text-[10px] font-code font-bold uppercase tracking-tighter">Node.js</span>
+        </div>
+      </div>
+      
+      <div className="absolute bottom-1/4 right-10 opacity-20 animate-float-delayed hidden lg:block">
+        <div className="glass p-4 rounded-2xl border-secondary/20 flex flex-col items-center gap-2">
+          <Cloud className="h-8 w-8 text-secondary" />
+          <span className="text-[10px] font-code font-bold uppercase tracking-tighter">AWS Cloud</span>
+        </div>
+      </div>
+
+      <div className="absolute top-1/3 right-[15%] opacity-10 animate-float hidden md:block">
+        <div className="flex items-center gap-2 font-code text-sm text-primary">
+          <span className="h-2 w-2 rounded-full bg-primary" />
+          microservices.init()
+        </div>
+      </div>
+
+      <div className="absolute bottom-1/3 left-[15%] opacity-10 animate-float-delayed hidden md:block">
+        <div className="flex items-center gap-2 font-code text-sm text-secondary">
+          <span className="h-2 w-2 rounded-full bg-secondary" />
+          aws_lambda_deploy
+        </div>
+      </div>
+
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none" />
 

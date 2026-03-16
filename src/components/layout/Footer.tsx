@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 export function Footer() {
@@ -7,8 +6,8 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-primary flex items-center justify-center text-white text-[10px] font-black">A</div>
-            <span className="font-headline font-bold text-sm tracking-widest uppercase">ArchitechNexus</span>
+            <div className="h-6 w-6 rounded-md bg-primary flex items-center justify-center text-white text-[10px] font-black">P</div>
+            <span className="font-headline font-bold text-sm tracking-widest uppercase">PORTFOLIO</span>
           </div>
           
           <div className="text-xs text-muted-foreground text-center md:text-left">

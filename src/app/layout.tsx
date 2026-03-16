@@ -1,9 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ArchitechNexus | Prince Gupta - Senior Backend Engineer',
+  title: 'PORTFOLIO | Prince Gupta - Senior Backend Engineer',
   description: 'Portfolio of Prince Gupta, a Senior Backend Developer specializing in Node.js, AWS, and scalable backend systems.',
 };
 
