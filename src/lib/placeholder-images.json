@@ -2,27 +2,33 @@
   "placeholderImages": [
     {
       "id": "profile-photo",
-      "description": "Professional Headshot",
-      "imageUrl": "https://picsum.photos/seed/prince/400/400",
-      "imageHint": "man portrait"
+      "description": "Professional Headshot of Prince Gupta",
+      "imageUrl": "https://picsum.photos/seed/prince-gupta/400/400",
+      "imageHint": "professional man"
     },
     {
       "id": "qiklet-thumbnail",
-      "description": "Hyperlocal Marketplace Dashboard",
-      "imageUrl": "https://picsum.photos/seed/qiklet/800/600",
-      "imageHint": "ecommerce dashboard"
+      "description": "QIKLET - Hyperlocal Marketplace & POS Platform",
+      "imageUrl": "https://picsum.photos/seed/qiklet-pos/800/600",
+      "imageHint": "marketplace dashboard"
     },
     {
       "id": "iot-platform-thumbnail",
-      "description": "IoT Device Monitoring Platform",
-      "imageUrl": "https://picsum.photos/seed/iot/800/600",
+      "description": "Broan & NuTone - IoT Device Platform",
+      "imageUrl": "https://picsum.photos/seed/iot-smart/800/600",
       "imageHint": "iot telemetry"
     },
     {
+      "id": "age-industries-thumbnail",
+      "description": "Age Industries - BLDC Fan IoT Platform",
+      "imageUrl": "https://picsum.photos/seed/fan-iot/800/600",
+      "imageHint": "smart home"
+    },
+    {
       "id": "aws-opt-thumbnail",
-      "description": "Cloud Infrastructure Optimization",
-      "imageUrl": "https://picsum.photos/seed/aws/800/600",
-      "imageHint": "cloud server"
+      "description": "AWS Infrastructure Cost Optimization",
+      "imageUrl": "https://picsum.photos/seed/aws-cloud-opt/800/600",
+      "imageHint": "cloud architecture"
     }
   ]
 }

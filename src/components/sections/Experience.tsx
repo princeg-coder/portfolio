@@ -1,16 +1,16 @@
 
-import { Badge } from '@/components/ui/badge';
 import { Calendar, Building2, ChevronRight } from 'lucide-react';
 
 const experiences = [
   {
     role: 'Software Developer',
-    company: 'Dream Filler Software Solution',
-    period: '2021 – Present',
+    company: 'Dream Filler Software Solution Pvt. Ltd.',
+    period: 'Sept 2021 – Present',
     highlights: [
-      'Designed and optimized scalable REST APIs for high-traffic mobile applications.',
-      'Implemented real-time notification systems using WebSockets and MQTT.',
-      'Managed AWS cloud infrastructure (EC2, RDS, S3) and CI/CD pipelines.'
+      'Designed and developed scalable REST APIs using Node.js, Express.js, and PostgreSQL for production applications.',
+      'Built backend modules for hyperlocal commerce platforms, POS systems, and real-time applications.',
+      'Managed cloud deployments on AWS infrastructure including EC2, RDS, S3, Lambda, and API Gateway.',
+      'Integrated real-time notification systems using WebSockets, Socket.IO, and MQTT protocols.'
     ]
   }
 ];
@@ -21,17 +21,15 @@ export function Experience() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Professional <span className="text-gradient">Journey</span></h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">A timeline of my career growth and technical impact.</p>
+          <p className="text-muted-foreground max-w-xl mx-auto">4.5+ years of delivering scalable backend systems.</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           {experiences.map((exp, i) => (
             <div key={i} className="relative pl-10 md:pl-0">
-              {/* Vertical Line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary via-secondary to-transparent" />
               
               <div className="relative mb-12 flex flex-col md:flex-row items-center">
-                {/* Timeline Dot */}
                 <div className="absolute left-[-2.3rem] md:left-1/2 md:ml-[-0.6rem] h-5 w-5 rounded-full bg-primary border-4 border-background z-10" />
                 
                 <div className="md:w-1/2 md:pr-12 md:text-right w-full mb-4 md:mb-0">
