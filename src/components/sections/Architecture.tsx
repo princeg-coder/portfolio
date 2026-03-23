@@ -76,7 +76,7 @@ export function Architecture() {
                     </div>
                     <div className="p-4 glass rounded-2xl border-white/5">
                       <h4 className="text-xs font-headline uppercase tracking-widest text-secondary mb-1">Tech Used</h4>
-                      <p className="text-sm font-medium">Node.js, AWS Lambda, Redis, RabbitMQ</p>
+                      <p className="text-sm font-medium">Node.js, AWS Lambda, RabbitMQ</p>
                     </div>
                   </div>
                 </div>

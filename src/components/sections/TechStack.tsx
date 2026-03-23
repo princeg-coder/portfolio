@@ -12,7 +12,7 @@ const stacks = [
   },
   {
     category: 'Databases',
-    items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis']
+    items: ['PostgreSQL', 'MongoDB']
   },
   {
     category: 'Tools',

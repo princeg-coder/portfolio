@@ -54,7 +54,7 @@ Experience: 4.5+ years specializing in Node.js, AWS, and scalable backend system
 Skills:
 - Backend: Node.js, Express.js, Microservices, REST APIs, GraphQL
 - Cloud & DevOps: AWS (EC2, S3, RDS, Lambda, API Gateway), Docker, CI/CD
-- Databases: PostgreSQL, MongoDB, MySQL, Redis
+- Databases: PostgreSQL, MongoDB
 - Tools: Git, Postman, Firebase, ActiveMQ, MQTT
 
 Projects:

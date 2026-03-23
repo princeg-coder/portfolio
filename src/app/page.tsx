@@ -63,7 +63,7 @@ const IconMap = {
 };
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('resume');
+  const [activeTab, setActiveTab] = useState('about');
 
   const profileImg = '/profileImage.png';
 
@@ -271,17 +271,16 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Coding Skills Visual */}
+                {/* Skills Visual */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-10">
                     <Code className="h-5 w-5 text-primary" />
-                    <h2 className="text-xl font-black uppercase tracking-tight">Coding</h2>
+                    <h2 className="text-xl font-black uppercase tracking-tight">Skills</h2>
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center bg-zinc-900/40 p-8 rounded-3xl border border-white/5">
-                    <CircularSkill label="JavaScript" percentage={95} />
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-items-center bg-zinc-900/40 p-8 rounded-3xl border border-white/5">
                     <CircularSkill label="Node.js" percentage={95} />
-                    <CircularSkill label="Python" percentage={75} />
+                    <CircularSkill label="AWS" percentage={95} />
                     <CircularSkill label="SQL" percentage={90} />
                   </div>
                 </div>
@@ -290,9 +289,9 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                   {[
                     { title: 'Cloud / DevOps', skills: ['AWS (EC2, S3, RDS)', 'Lambda', 'API Gateway', 'AWS IoT', 'CI/CD'] },
-                    { title: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis'] },
+                    { title: 'Databases', skills: ['PostgreSQL', 'MongoDB'] },
                     { title: 'Frameworks', skills: ['Node.js', 'Express.js', 'Next.js', 'Sequelize'] },
-                    { title: 'Other', skills: ['OAuth2', 'JWT', 'Socket.IO', 'MQTT', 'Mocha', 'Jest'] },
+                    { title: 'Security & Realtime', skills: ['OAuth2', 'JWT', 'Socket.IO', 'MQTT'] },
                   ].map((category, idx) => (
                     <div key={idx} className="p-5 bg-zinc-800/20 rounded-2xl border border-white/5">
                       <h3 className="text-[10px] font-black uppercase mb-4 tracking-widest text-primary">{category.title}</h3>
