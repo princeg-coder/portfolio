@@ -13,7 +13,6 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { PROJECTS } from '@/lib/projects-data';
 
 const CircularSkill = ({ label, percentage }: { label: string; percentage: number }) => {
@@ -66,7 +65,7 @@ const IconMap = {
 export default function Home() {
   const [activeTab, setActiveTab] = useState('resume');
 
-  const profileImg = PlaceHolderImages.find(img => img.id === 'profile-photo')?.imageUrl || '';
+  const profileImg = '/profileImage.png';
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 selection:bg-primary/30">
@@ -117,11 +116,11 @@ export default function Home() {
                       src={profileImg} 
                       alt="Prince Gupta" 
                       fill 
-                      className="object-cover profile-portrait-image"
+                      className="profile-portrait-image"
                       data-ai-hint="professional portrait"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3087&auto=format&fit=crop';
+                        target.src = '/profile-photo.jpg';
                       }}
                     />
                   ) : (
@@ -140,7 +139,7 @@ export default function Home() {
               <div className="flex items-center justify-center gap-2 mb-6 mt-2">
                 <span className="px-3 py-1 bg-zinc-700/60 border border-zinc-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">⚡ Node.js</span>
                 <span className="text-zinc-500 font-black text-xs">&</span>
-                <span className="px-3 py-1 bg-zinc-700/60 border border-zinc-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">☁ AWS Developer</span>
+                <span className="px-3 py-1 bg-zinc-700/60 border border-zinc-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-md">☁ AWS Certified</span>
               </div>
               
               <div className="space-y-3 mb-8">
@@ -170,7 +169,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 w-full gap-3 border-t border-white/5 pt-8 mt-auto">
               <Button asChild variant="outline" className="h-12 rounded-xl font-bold uppercase text-[10px] tracking-widest border-zinc-800 hover:bg-zinc-800">
-                <a href="/CVNode.pdf" download="Prince-Gupta-CV.pdf">
+                <a href="/Prince_Resume.pdf" download="Prince_Resume.pdf">
                   CV <Download className="ml-2 h-3 w-3" />
                 </a>
               </Button>
@@ -188,17 +187,14 @@ export default function Home() {
                     <div className="h-1 flex-1 bg-gradient-to-r from-primary/20 to-transparent rounded-full" />
                   </div>
                   <p className="text-zinc-400 leading-relaxed text-sm">
-                    Results-driven Backend Developer (Node.js) with 4.5+ years of experience designing and building scalable REST APIs, working with SQL/NoSQL databases, deploying cloud workloads on AWS, and delivering real-time production-grade applications.
-                  </p>
-                  <p className="text-zinc-400 leading-relaxed text-sm mt-4">
-                    Experienced in AWS infrastructure, database optimization, authentication systems, and automated testing, with hands-on expertise in developing backend solutions for hyperlocal commerce, IoT platforms, and enterprise systems.
+                    AWS Certified Solutions Architect - Associate and Backend Developer with 4.5+ years of experience building scalable, secure, and high-performance systems using Node.js and Express.js. Proven expertise in REST and GraphQL APIs, SQL/NoSQL databases, real-time architectures, and AWS services including EC2, S3, Lambda, API Gateway, RDS, and CloudWatch. Hands-on experience with Crosser Flow Studio for MQTT-based streaming pipelines, edge analytics, data transformation, and aggregation, with a strong focus on reliability, cost optimization, and production readiness.
                   </p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-10">
                   {[
                     { label: 'Experience', value: '4.5+ Years', icon: <Briefcase className="h-4 w-4" /> },
-                    { label: 'Cloud Focus', value: 'AWS (SAA-C03)', icon: <Cloud className="h-4 w-4" /> },
+                    { label: 'Certification', value: 'AWS Certified (SAA-C03)', icon: <Cloud className="h-4 w-4" /> },
                     { label: 'Core Stack', value: 'Node.js / Express', icon: <Terminal className="h-4 w-4" /> },
                     { label: 'Architecture', value: 'Microservices', icon: <Server className="h-4 w-4" /> },
                   ].map((info, idx) => (
@@ -344,10 +340,19 @@ export default function Home() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                          <h3 className="text-sm font-black text-zinc-200">AWS Solutions Architect – Associate</h3>
-                          <span className="px-2 py-0.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-full text-[9px] font-black uppercase tracking-widest">In Progress</span>
+                          <h3 className="text-sm font-black text-zinc-200">AWS Certified Solutions Architect</h3>
+                          <span className="px-2 py-0.5 bg-green-500/10 text-green-400 border border-green-500/20 rounded-full text-[9px] font-black uppercase tracking-widest">Certified</span>
                         </div>
-                        <p className="text-xs text-zinc-500 font-bold">Amazon Web Services · SAA-C03 · 2026</p>
+                        <p className="text-xs text-zinc-500 font-bold">Amazon Web Services · SAA-C03 · Score: 986/1000 · 2026</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 p-5 bg-zinc-800/30 rounded-2xl border border-white/5">
+                      <div className="p-3 bg-primary/10 rounded-xl shrink-0">
+                        <Award className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-black text-zinc-200">Crosser Fundamental Training</h3>
+                        <p className="text-xs text-zinc-500 font-bold">Fundamentals Training Course · Completed</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-5 bg-zinc-800/30 rounded-2xl border border-white/5">
@@ -380,6 +385,7 @@ export default function Home() {
                               fill 
                               className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60" 
                             />
+                            <Badge variant="outline" className="absolute top-3 left-3 text-[7px] font-black border-primary/50 bg-primary/10 text-primary uppercase tracking-widest">{project.type}</Badge>
                             <div className="absolute inset-0 flex items-center justify-center">
                               <div className="p-3 bg-zinc-900/80 rounded-full text-primary scale-0 group-hover:scale-100 transition-transform duration-500 border border-primary/30">
                                 {IconMap[project.iconName]}
